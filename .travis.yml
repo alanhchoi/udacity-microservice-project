@@ -15,6 +15,9 @@ before_script:
 
 script:
   - docker --version # print the version for logging
+  - docker build -t udagram-api-feeds udagram-api-feeds
+  - docker build -t udagram-api-users udagram-api-users
+  - docker build -t udagram-frontend udagram-frontend
 
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME"
